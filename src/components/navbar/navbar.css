@@ -1,0 +1,24 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  max-width: 1720px;
+  align-items: center;
+  padding: 2rem;
+  height: auto;
+  gap: 25px;
+  background-color: var(--DarkBlue--);
+}
+
+.navbar h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--white--);
+}
+
+.dark-mode {
+  margin-left: auto;
+}
+
+.dark-mode h3 {
+  color: var(--white--);
+}
