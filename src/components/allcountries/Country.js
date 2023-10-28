@@ -1,11 +1,13 @@
-export default function Country({ country, whatCountry }) {
+import "./countries.css";
+
+export default function Country({ country }) {
   return (
     <div
       href="/"
       data-country-name={country.name.common}
       className="country"
-      onClick={() => whatCountry(country)}
       key={country.latlng}
+      onClick={() => {}}
     >
       <div className="flag-image">
         <img

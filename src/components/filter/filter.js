@@ -33,6 +33,7 @@ export default function Filter({ selected, setselected }) {
           <div className="dropdown-content">
             {options.map((option) => (
               <div
+                key={option}
                 className="dropdown-item"
                 onClick={(e) => {
                   setselected(option);
