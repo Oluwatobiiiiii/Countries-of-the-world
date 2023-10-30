@@ -9,7 +9,7 @@ export default function DisplayCountries({ whatCountry, countries }) {
         {countries.map((country) => (
           <Country
             country={country}
-            key={country.latlng}
+            key={country.name.common}
             whatCountry={whatCountry}
           />
         ))}

@@ -1,14 +1,19 @@
 import "./filter.css";
 import { useState } from "react";
 
-export default function Filter({ selected, setselected }) {
+export default function Filter({ selected, setselected, search, setSearch }) {
   const [isActive, setIsActive] = useState(false);
+
+  function inputed(e) {
+    e.preventDefault();
+    // console.log(search);
+  }
 
   const options = ["Africa", "America", "Asia", "Europe", "Oceanina"];
   return (
     <div className="filters">
       <div className="search-filed">
-        <form>
+        <form onSubmit={inputed}>
           <i
             className="fa-solid fa-magnifying-glass"
             style={{ color: "#ffffff" }}
@@ -17,6 +22,7 @@ export default function Filter({ selected, setselected }) {
             type="text"
             className="search-input"
             placeholder="Search for a country ...."
+            onChange={(e) => setSearch(e.target.value)}
           />
         </form>
       </div>

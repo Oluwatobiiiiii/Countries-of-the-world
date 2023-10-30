@@ -1,13 +1,18 @@
 import "./countries.css";
+import { useNavigate } from "react-router-dom";
 
-export default function Country({ country }) {
+export default function Country({ country, whatCountry }) {
+  const navigate = useNavigate();
   return (
     <div
       href="/"
       data-country-name={country.name.common}
       className="country"
-      key={country.latlng}
-      onClick={() => {}}
+      key={country.name.common}
+      onClick={() => {
+        navigate("/Details");
+        whatCountry(country.name.common);
+      }} // to the next page
     >
       <div className="flag-image">
         <img

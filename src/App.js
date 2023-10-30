@@ -8,9 +8,10 @@ import Spinner from "./components/spinner/spinner";
 import { useState, useEffect } from "react";
 
 export default function App() {
-  const [selected, setselected] = useState("Filter by Region ");
-  const [loading, setIsLoading] = useState(false);
   const [countries, setCountries] = useState([]);
+  const [loading, setIsLoading] = useState(false);
+  const [selected, setselected] = useState("Filter by Region ");
+  const [search, setSearch] = useState("");
   const [detail, setDetail] = useState("");
 
   function whatCountry(el) {
@@ -20,11 +21,13 @@ export default function App() {
     // setDetail("");
   }
 
+  // console.log(search);
+
   useEffect(function () {
     const controller = new AbortController();
     async function countries() {
       setIsLoading(true);
-      const data = await fetch("https://restcountries.com/v3.1/all", {
+      const data = await fetch(`https://restcountries.com/v3.1/all`, {
         signal: controller.abort(),
       });
 
@@ -40,13 +43,19 @@ export default function App() {
       controller.abort();
     };
   }, []);
-  // console.log(countries);
+
+  // const updatedCountries = countries.filter()
 
   return (
     <Router>
       <div className="App">
         <Navbar />
-        <Filter selected={selected} setselected={setselected} />
+        <Filter
+          selected={selected}
+          setselected={setselected}
+          search={search}
+          setSearch={setSearch}
+        />
 
         <Routes>
           <Route
