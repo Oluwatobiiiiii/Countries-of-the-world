@@ -12,13 +12,11 @@ export default function App() {
   const [loading, setIsLoading] = useState(false);
   const [selected, setselected] = useState("Filter by Region ");
   const [search, setSearch] = useState("");
-  const [detail, setDetail] = useState("");
+  const [detail, setDetail] = useState([]);
+  const [Error, setError] = useState("");
 
-  function whatCountry(el) {
-    console.log(el);
-    setDetail(el);
-    console.log(detail);
-    // setDetail("");
+  function whatCountry(name) {
+    setDetail(name);
   }
 
   // console.log(search);
@@ -26,16 +24,19 @@ export default function App() {
   useEffect(function () {
     const controller = new AbortController();
     async function countries() {
-      setIsLoading(true);
-      const data = await fetch(`https://restcountries.com/v3.1/all`, {
-        signal: controller.abort(),
-      });
+      try {
+        setIsLoading(true);
+        const data = await fetch(`https://restcountries.com/v3.1/all`, {
+          signal: controller.abort(),
+        });
 
-      const result = await data.json();
-      // console.log(result);
-      setCountries(result);
-      setIsLoading(false);
-      // setCountries((result) => [result, ...countries]);
+        const result = await data.json();
+        setCountries(result);
+      } catch (Error) {
+        setError(Error.message);
+      } finally {
+        setIsLoading(false);
+      }
     }
     countries();
 

@@ -6,13 +6,14 @@ export default function Country({ country, whatCountry }) {
   return (
     <div
       href="/"
-      data-country-name={country.name.common}
+      countryname={country.name.common}
       className="country"
       key={country.name.common}
       onClick={() => {
         navigate("/Details");
-        whatCountry(country.name.common);
-      }} // to the next page
+        whatCountry(country);
+        console.log(country);
+      }}
     >
       <div className="flag-image">
         <img
