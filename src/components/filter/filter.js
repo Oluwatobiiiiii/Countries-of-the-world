@@ -1,7 +1,7 @@
 import "./filter.css";
 import { useState } from "react";
 
-export default function Filter({ selected, setselected, search, setSearch }) {
+export default function Filter({ selected, setselected, setSearch }) {
   const [isActive, setIsActive] = useState(false);
 
   function inputed(e) {
@@ -9,7 +9,7 @@ export default function Filter({ selected, setselected, search, setSearch }) {
     // console.log(search);
   }
 
-  const options = ["Africa", "America", "Asia", "Europe", "Oceanina"];
+  const options = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
   return (
     <div className="filters">
       <div className="search-filed">

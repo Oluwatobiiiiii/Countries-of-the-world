@@ -6,7 +6,7 @@ export default function DisplayCountries({ whatCountry, countries }) {
     // THE HOME PAGE
     <div className="countries">
       <div className="all-countries">
-        {countries.map((country) => (
+        {countries?.map((country) => (
           <Country
             country={country}
             key={country.name.common}

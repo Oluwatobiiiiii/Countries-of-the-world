@@ -11,7 +11,6 @@ export default function Country({ country, whatCountry }) {
       onClick={() => {
         navigate("/Details");
         whatCountry(country);
-        console.log(country);
       }}
     >
       <div className="flag-image">
@@ -23,7 +22,7 @@ export default function Country({ country, whatCountry }) {
       </div>
       <div className="country-description">
         <h3>{country.name.common}</h3>
-        <p>Population : {country.population}</p>
+        <p>Population : {country.population.toLocaleString()}</p>
         <p>Region : {country.region}</p>
         <p>Capital : {country.capital}</p>
       </div>

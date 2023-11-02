@@ -24,7 +24,7 @@ export default function Details({ detail }) {
             <div className="part-1">
               <div className="text-1">
                 <p>Native Name: {detail.name.common}</p>
-                <p>Population: {detail.population}</p>
+                <p>Population: {detail.population.toLocaleString()}</p>
                 <p>Region: {detail.region}</p>
                 <p>Sub Region: {detail.subregion}</p>
                 <p>Capital: {detail.capital}</p>
@@ -39,10 +39,20 @@ export default function Details({ detail }) {
               </div>
             </div>
 
-            <div>
+            <div className="text-2">
               <p>Top Level Domain: {detail.tld}</p>
-              <p>Currencies:</p>
-              <p>Languages: </p>
+              <p>
+                Currencies:
+                {detail.currencies
+                  ? Object.keys(detail.currencies).join(", ")
+                  : ""}
+              </p>
+              <p>
+                Languages:
+                {detail.languages
+                  ? Object.values(detail.languages).join(", ")
+                  : ""}
+              </p>
             </div>
           </div>
         </div>

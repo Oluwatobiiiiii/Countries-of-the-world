@@ -10,7 +10,7 @@ import { useState, useEffect } from "react";
 export default function App() {
   const [countries, setCountries] = useState([]);
   const [loading, setIsLoading] = useState(false);
-  const [selected, setselected] = useState("Filter by Region ");
+  const [selected, setselected] = useState("Filter by Region");
   const [search, setSearch] = useState("");
   const [detail, setDetail] = useState([]);
   const [Error, setError] = useState("");
@@ -18,6 +18,7 @@ export default function App() {
   function whatCountry(name) {
     setDetail(name);
     console.log(detail);
+    console.log(countries);
   }
 
   // console.log(search);
@@ -46,7 +47,13 @@ export default function App() {
     };
   }, []);
 
-  // const updatedCountries = countries.filter()
+  const updatedCountries = countries.filter(
+    (country) =>
+      country.name.common.toLowerCase().includes(search.toLowerCase()) ||
+      country.region === selected
+  );
+  console.log(selected);
+  console.log(updatedCountries);
 
   return (
     <Router>
@@ -68,7 +75,7 @@ export default function App() {
                 <Spinner />
               ) : (
                 <DisplayCountries
-                  countries={countries}
+                  countries={updatedCountries}
                   whatCountry={whatCountry}
                 />
               )
