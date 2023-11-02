@@ -6,7 +6,6 @@ export default function Country({ country, whatCountry }) {
   return (
     <div
       href="/"
-      countryname={country.name.common}
       className="country"
       key={country.name.common}
       onClick={() => {

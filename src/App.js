@@ -17,6 +17,7 @@ export default function App() {
 
   function whatCountry(name) {
     setDetail(name);
+    console.log(detail);
   }
 
   // console.log(search);
@@ -74,7 +75,10 @@ export default function App() {
             }
           />
 
-          <Route path="/Details" element={<Details detail={detail} />} />
+          <Route
+            path="/Details"
+            element={<Details detail={detail} whatCountry={whatCountry} />}
+          />
         </Routes>
       </div>
     </Router>

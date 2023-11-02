@@ -1,0 +1,65 @@
+.back {
+  margin-left: 2rem;
+  width: 100px;
+  height: 30px;
+  background-color: var(--DarkBlue--);
+  border: none;
+  color: var(--white--);
+  cursor: pointer;
+}
+
+.country-details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 25px;
+  margin: 2rem;
+}
+
+.flag {
+  width: auto;
+  height: 300px;
+}
+
+.country-official-image {
+  width: auto;
+  height: auto;
+  flex: 50%;
+}
+
+.country-details {
+  display: flex;
+  flex-direction: row;
+  color: var(--white--);
+  /* align-items: center; */
+}
+
+.country-borders {
+  display: block;
+}
+
+.part-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.text-1 {
+  line-height: 2;
+}
+
+.border-btn {
+  width: 80px;
+  height: 40px;
+  gap: 10px;
+  border: none;
+  background-color: var(--DarkBlue--);
+  color: var(--white--);
+  cursor: pointer;
+}
+
+.country-borders {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
