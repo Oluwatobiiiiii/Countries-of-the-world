@@ -6,6 +6,7 @@ import DisplayCountries from "./components/DisplayCountries/DisplayCountries";
 import Filter from "./components/filter/filter";
 import Spinner from "./components/spinner/spinner";
 import { useState, useEffect } from "react";
+// import useLocalStorage from "use-local-storage";
 
 export default function App() {
   const [countries, setCountries] = useState([]);
@@ -14,14 +15,16 @@ export default function App() {
   const [search, setSearch] = useState("");
   const [detail, setDetail] = useState([]);
   const [Error, setError] = useState("");
+  // const [theme, setTheme] = useLocalStorage("theme" ? "dark" : "light");
 
   function whatCountry(name) {
     setDetail(name);
-    console.log(detail);
-    console.log(countries);
   }
 
-  // console.log(search);
+  // const switchTheme = () => {
+  //   const newTheme = theme === "light" ? "dark" : "light";
+  //   setTheme(newTheme);
+  // };
 
   useEffect(function () {
     const controller = new AbortController();
@@ -55,8 +58,6 @@ export default function App() {
         selected === "Filter by region") ||
       country.region.includes(selected)
   );
-  console.log(selected);
-  console.log(updatedCountries);
 
   return (
     <Router>
