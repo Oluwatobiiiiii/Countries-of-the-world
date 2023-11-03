@@ -9,7 +9,7 @@ export default function Filter({ selected, setselected, setSearch }) {
     // console.log(search);
   }
 
-  const options = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
+  const options = ["All", "Africa", "Americas", "Asia", "Europe", "Oceania"];
   return (
     <div className="filters">
       <div className="search-filed">

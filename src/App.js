@@ -56,6 +56,7 @@ export default function App() {
     (country) =>
       (country.name.common.toLowerCase().includes(search.toLowerCase()) &&
         selected === "Filter by region") ||
+      selected === "All" ||
       country.region.includes(selected)
   );
 
