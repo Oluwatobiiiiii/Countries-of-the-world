@@ -57,6 +57,17 @@ export default function Details({ detail }) {
           </div>
         </div>
       </div>
+
+      <p className="treasure">
+        <a
+          className="me"
+          href="https://linktr.ee/codingninja"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Coding Ninja
+        </a>
+      </p>
     </div>
   );
 }

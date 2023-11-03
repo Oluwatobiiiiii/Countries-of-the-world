@@ -16,10 +16,6 @@
   padding: 1rem;
 }
 
-form {
-  position: absolute;
-}
-
 .fa-magnifying-glass {
   position: relative;
   left: 20px;
@@ -60,6 +56,7 @@ input:focus {
   justify-content: space-between;
   border-radius: 5px;
   cursor: pointer;
+  height: 50px;
 }
 
 .dropdown .dropdown-content {
@@ -77,4 +74,11 @@ input:focus {
   padding: 15px;
   transition: all 0.2s;
   cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .filters {
+    flex-direction: column;
+    gap: 25px;
+  }
 }
