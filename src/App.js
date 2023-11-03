@@ -10,7 +10,7 @@ import { useState, useEffect } from "react";
 export default function App() {
   const [countries, setCountries] = useState([]);
   const [loading, setIsLoading] = useState(false);
-  const [selected, setselected] = useState("");
+  const [selected, setselected] = useState("Filter by region");
   const [search, setSearch] = useState("");
   const [detail, setDetail] = useState([]);
   const [Error, setError] = useState("");
@@ -51,7 +51,8 @@ export default function App() {
 
   updatedCountries = countries.filter(
     (country) =>
-      country.name.common.toLowerCase().includes(search.toLowerCase()) &&
+      (country.name.common.toLowerCase().includes(search.toLowerCase()) &&
+        selected === "Filter by region") ||
       country.region.includes(selected)
   );
   console.log(selected);
